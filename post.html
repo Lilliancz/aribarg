@@ -1,0 +1,58 @@
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<!--Written by Lillian Chen at the University of Michigan in April 2019-->
+<!--I apologize in advance for the amateur formatting of code "but it works!"-->
+<!--With credit due to Rene Kopietz for the inspiration for this simulated chat.-->
+<!--This version is meant to work with Empirisoft Medialab, which will save the 
+respondent input as a field in the responses.xls file and insert the condition and 
+subject number from the experiment file. -->
+<html>
+<head>
+	<title>Ross School of Business LCZ</title>
+	<link rel='stylesheet' href='survey.css' media='screen' charset='utf-8' />
+	<script> 
+
+function validate ( )
+{
+        valid = true;
+	if ( document.form1.password.value != "tappan")
+			        {
+                alert ( "Please use the password given to you at the end of the survey." );
+                valid = false;
+        }
+        return valid;
+
+}
+
+function doInit(){
+   var link = "https://umich.qualtrics.com/jfe/form/SV_3yLHdBSu1EGklSt?subj=<ml.subject>&cond=<ml.condition>"
+var iframe = document.createElement('iframe');
+var target = document.getElementById("Qualtrics");
+iframe.frameBorder=0;
+iframe.width="1000px";
+iframe.height="768px";
+iframe.id="randomid";
+iframe.setAttribute("src", link);
+target.appendChild(iframe);
+}
+
+</script>
+
+</head>
+<body onload='doInit();'>
+
+	<div id='content'>
+		<div id='Qualtrics'></div>
+		</div>
+
+	</div>
+
+<div id = "finalsubmit" ><P>Enter password:
+<form name="form1" method="post" onSubmit="return validate ( );">
+<P>
+<input type="text" name="password"><BR>
+<input type="submit" value="Connect"></p></form>
+</div>
+
+</body>
+</html>
+

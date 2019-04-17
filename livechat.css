@@ -59,6 +59,7 @@
 }
 
 
+iframe {pointer-events: none;}
 
 #chat {
 	position : absolute;
