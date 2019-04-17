@@ -1,0 +1,55 @@
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<!--Written by Lillian Chen at the University of Michigan in March 2014-->
+<!--I apologize in advance for the amateur formatting of code "but it works!"-->
+<!--With credit due to Rene Kopietz for the inspiration for this simulated chat.-->
+<html>
+<head>
+	<title>Ross School of Business LCZ</title>
+	<link rel='stylesheet' href='chat.css' media='screen' charset='utf-8' />
+	<script> 
+
+function validate ( )
+{
+        valid = true;
+	if ( document.form1.password.value != "part1")
+			        {
+                alert ( "Please use the password given to you in the window to your left." );
+                valid = false;
+        }
+        return valid;
+
+}
+
+function doInit(){
+   var link = "https://umich.qualtrics.com/SE/?SID=SV_bIB6rZJGy9CFWo5&subj=<ml.subject>&cond=1"
+var iframe = document.createElement('iframe');
+var target = document.getElementById("Qualtrics");
+iframe.frameBorder=0;
+iframe.width="800px";
+iframe.height="650px";
+iframe.id="randomid";
+iframe.setAttribute("src", link);
+target.appendChild(iframe);
+}
+
+</script>
+
+</head>
+<body onload='doInit();'>
+
+	<div id='content'>
+		<div id='Qualtrics'></div>
+		</div>
+
+	</div>
+
+<div id = "finalsubmit" ><P>Enter password:
+<form name="form1" method="post" onSubmit="return validate ( );">
+<P>
+<input type="text" name="password"><BR>
+<input type="submit" value="Connect"></p></form>
+</div>
+
+</body>
+</html>
+
