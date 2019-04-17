@@ -9,17 +9,6 @@
 
 /* @end */
 
-.wrapper {
-	background-color : blue;
-	
-	z-index:10;
-	position:absolute;
-	top:0;
-	left:0;
-	width:850px;
-	height:800px;
-	opacity: 0.01;
-}
         
 
 #userheader {
@@ -40,7 +29,7 @@
 #video {
 	position : absolute;
 	top : -80px;
-	left : 50px;
+	left : 0px;
 	width: 800px;
 	height: 600px;
 	background-color : white;
@@ -51,17 +40,30 @@
 #chathalf {
 	position : absolute;
 	top : 10px;
-	left : 860px;
+	left : 810px;
 	height: 600px;
 	width: 300px;
+}
+
+.wrapper {
+	background-color : blue;
+	z-index:10;
+	position:absolute;
+	top:0;
+	left:0;
+	width:800px;
+	height:600px;
+	opacity: 0.01;
 }
 
 #whiteblock {
 	position : absolute;
 	top : 500px;
-	left : 50px;
-	height: 300px;
+	left : 0px;
+	height: 100px;
 	width: 800px;
+	background-color : white;
+	z-index:10;
 }
 
 #dummy {
@@ -109,7 +111,7 @@ iframe {pointer-events: none;}
 	position : absolute;
 	border: 1px solid #000;
 	background-color : #f4f4f4;
-	bottom : 30px;
+	bottom : 10px;
 	right : 10px;
 	width: 150px;
 	padding: 5px;
