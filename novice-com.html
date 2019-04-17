@@ -71,6 +71,23 @@ target.appendChild(iframe);
 }
 
 /* Initialize */
+
+var myLink = document.getElementsByClassName("myLink")[0];
+
+myLink.addEventListener("pointerup", handleLinkPress);
+
+function handleLinkPress(evt) {
+    // do something here...
+
+    evt.target.addEventListener("click", unfollowLink);
+
+    function unfollowLink(evt) {
+        evt.preventDefault();
+        evt.target.removeEventListener("click", unfollowLink);
+    }
+}
+
+
 function doInit () {
 	var avail = 1;
 	var speed = 1;
@@ -217,7 +234,7 @@ setTimeout('useraddsnippet("chat","end")',currentTime);
 <body onload='doInit();'>
 
 	<div id='content'>
-		<div id='video'></div>
+		<div id='video'></div><div class='wrapper'>&nbsp;</div>
 		<div id='chathalf'> 		
 			<div id='chat'> </div>
 			<form method="post" onkeypress="return event.keyCode != 13;">

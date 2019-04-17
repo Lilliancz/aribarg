@@ -67,7 +67,6 @@ iframe.height="650px";
 iframe.allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
 iframe.id="randomid";
 iframe.setAttribute("src", link);
-iframe.setAttribute("style", "pointer-events:none;");
 target.appendChild(iframe);
 }
 
@@ -75,7 +74,7 @@ target.appendChild(iframe);
 function doInit () {
 	var avail = 1;
 	var speed = 1;
-	var currentTime = 5000;
+	var currentTime = 0;
 	
 	makeiframe(); setTimeout('addsnippet("chat","<Strong>THIS TASK HAS ENDED. PLEASE ENTER THE PASSWORD <span style = color:blue>goblue </span> TO THE RIGHT</strong>")',currentTime+= speed*755000);
 
@@ -88,7 +87,7 @@ function doInit () {
 <body onload='doInit();'>
 
 	<div id='content'>
-		<div id='video'></div>
+		<div id='video'></div><div class='wrapper'>&nbsp;</div>
 		<div id='chathalf'> 		
 			<div id='chat'> </div>
 			<form method="post" onkeypress="return event.keyCode != 13;">

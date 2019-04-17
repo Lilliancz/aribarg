@@ -9,6 +9,19 @@
 
 /* @end */
 
+.wrapper {
+	background-color : blue;
+	
+	z-index:10;
+	position:absolute;
+	top:0;
+	left:0;
+	width:850px;
+	height:800px;
+	opacity: 0.01;
+}
+        
+
 #userheader {
 	text-align : center;
 	padding: 5px;
