@@ -35,6 +35,7 @@ data list file 'C:\Users\lillianc\Desktop\livechat\aribarg\data\byvariablename\l
     Date (A25)          Time (A25)
     control1 (A50)      expert-com4 (A50)   expert-xcom2 (A50)  novice-com5 (A50) 
     novice-xcom3 (A50)  post (A50)          pre (A50)           savedchat (A50) 
+    wait (A50) 
     tcontrol1 *         texpert-com4 *      texpert-xcom2 *     tnovice-com5 * 
     tnovice-xcom3 *     tpost *             tpre * .
 
