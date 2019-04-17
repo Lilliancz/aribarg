@@ -1,0 +1,118 @@
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<!--Written by Lillian Chen at the University of Michigan in April 2019-->
+<!--I apologize in advance for the amateur formatting of code "but it works!"-->
+<!--With credit due to Rene Kopietz for the inspiration for this simulated chat.-->
+<!--This version is meant to work with Empirisoft Medialab, which will save the 
+respondent input as a field in the responses.xls file and insert the condition and 
+subject number from the experiment file. -->
+<html>
+<head>
+	<title>Ross School of Business LCZ</title>
+	<link rel='stylesheet' href='livechat.css' media='screen' charset='utf-8' />
+	<script> 
+
+function validate ( )
+{
+        valid = true;
+	if ( document.form1.password.value != "goblue" )
+			        {
+                alert ( "Password will be available at the end of the task." );
+                valid = false;
+        }
+        return valid;
+
+}
+
+function chtext (id,text){
+	document.getElementById(id).innerHTML = text;
+}
+
+
+function addsnippet(id,text){
+	newSnippet ="<p>" +text+ "</p>";
+	document.getElementById(id).innerHTML += newSnippet;
+	scrolltobottom(id);
+}
+
+function scrolltobottom(id){
+ 	var objDiv = document.getElementById(id);
+	var height = objDiv.scrollHeight;
+ 	objDiv.scrollTop = height;
+}
+
+
+function useraddsnippet(id,bucket){
+	var button = document.getElementById('submitbutton');
+	var chattext = document.getElementById('usertext');
+	var oldtext = document.getElementById('chatty');
+
+	button.onclick = function () {
+		newSnippet ="<p>" +chattext.value + "</p>";
+		newSaveText = oldtext.value + "Time: " + bucket + ", Text: " + chattext.value + "; ";
+		document.getElementById(id).innerHTML += newSnippet;
+		scrolltobottom(id);
+		document.getElementById('usertext').value='';
+		document.getElementById('chatty').value = newSaveText;
+		return false;
+	};
+}
+
+function makeiframe(){
+   var link = "https://www.youtube.com/embed/b-_IUmP2mbQ?rel=0&autoplay=1&mute=0&controls=0&disablekb=1&modestbranding=1&showinfo=0&autohide=1"
+var iframe = document.createElement('iframe');
+var target = document.getElementById("video");
+iframe.frameBorder=0;
+iframe.width="800px";
+iframe.height="650px";
+iframe.allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
+iframe.id="randomid";
+iframe.setAttribute("src", link);
+target.appendChild(iframe);
+}
+
+/* Initialize */
+function doInit () {
+	var avail = 1;
+	var speed = 1;
+	var currentTime = 5000;
+	
+	makeiframe(); setTimeout('addsnippet("chat","<Strong>THIS TASK HAS ENDED. PLEASE ENTER THE PASSWORD <span style = color:blue>goblue </span> TO THE RIGHT</strong>")',currentTime+= speed*755000);
+
+
+
+}
+</script>
+
+</head>
+<body onload='doInit();'>
+
+	<div id='content'>
+		<div id='video'></div>
+		<div id='chathalf'> 		
+			<div id='chat'> </div>
+			<form method="post" onkeypress="return event.keyCode != 13;">
+			<div style="display:none">
+				<input id="usertext" type="text" value="Enter text here" onkeydown="if (event.keyCode == 13) document.getElementById('submitbutton').click()" autocomplete="off">
+				<input id="dummy" type="text" >
+			</div>
+			<div id="submitchat" style="display:none">
+				<button id="submitbutton">Send</button>
+			</div></form>
+
+		</div>
+
+	</div>
+
+<div id = "finalsubmit" ><P>Enter code here:
+<form name="form1" method="post" onSubmit="return validate ( );">
+<P>
+<input type="text" name="password"><BR>
+<input type="text" id="chatty" name ="savedchat">
+<!--please please remember to add "savedchat" to the medialab responses.xls file and also as a custom item in the questionnaire with name "savedchat" and no file name and no wording.-->
+<BR>
+<input type="submit" value="Connect"></p></form>
+</div>
+
+</body>
+</html>
+

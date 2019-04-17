@@ -1,0 +1,103 @@
+
+/* @group generic */
+
+* {
+	font-size : 10pt;
+	font-family : Arial, Helvetica, Sans-Serif;
+	color : black;
+}
+
+/* @end */
+
+#userheader {
+	text-align : center;
+	padding: 5px;
+	border-bottom: 1px solid #000;
+	background-color: #9DCCE6;
+	font-weight: bold;
+}	
+
+.user {
+	background-repeat : no-repeat;
+	padding: 5px 5px 5px 30px;
+	background-position: 8px 4px;
+}
+
+
+#video {
+	position : absolute;
+	top : -80px;
+	left : 50px;
+	width: 800px;
+	height: 600px;
+	background-color : white;
+	pointer-events: none;
+	
+}
+
+#chathalf {
+	position : absolute;
+	top : 10px;
+	left : 860px;
+	height: 600px;
+	width: 300px;
+}
+
+#whiteblock {
+	position : absolute;
+	top : 500px;
+	left : 50px;
+	height: 300px;
+	width: 800px;
+}
+
+#dummy {
+	display:none;
+}
+#chatty {
+	display:none;
+}
+
+
+
+#chat {
+	position : absolute;
+	top : 0px;
+	left : 0px;
+	border: 1px solid #000;
+	width: 288px;
+	height: 500px;
+	background-color : #f4f4f4;
+	overflow-y:auto;
+
+	padding: 5px;
+}
+
+
+#usertext {
+	position : absolute;
+	top : 515px;
+	left : 0px;
+	width: 250px;
+	height: 35px;
+	background-color : white;
+	padding: 5px;
+}
+
+#submitchat {
+	position : absolute;
+	top : 515px;
+	left : 255px;
+	width: 20px;
+}
+
+#finalsubmit {
+	position : absolute;
+	border: 1px solid #000;
+	background-color : #f4f4f4;
+	bottom : 30px;
+	right : 10px;
+	width: 150px;
+	padding: 5px;
+
+}

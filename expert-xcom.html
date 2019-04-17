@@ -1,0 +1,241 @@
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<!--Written by Lillian Chen at the University of Michigan in April 2019-->
+<!--I apologize in advance for the amateur formatting of code "but it works!"-->
+<!--With credit due to Rene Kopietz for the inspiration for this simulated chat.-->
+<!--This version is meant to work with Empirisoft Medialab, which will save the 
+respondent input as a field in the responses.xls file and insert the condition and 
+subject number from the experiment file. -->
+<html>
+<head>
+	<title>Ross School of Business LCZ</title>
+	<link rel='stylesheet' href='livechat.css' media='screen' charset='utf-8' />
+	<script> 
+
+function validate ( )
+{
+        valid = true;
+	if ( document.form1.password.value != "goblue" )
+			        {
+                alert ( "Password will be available at the end of the task." );
+                valid = false;
+        }
+        return valid;
+
+}
+
+function chtext (id,text){
+	document.getElementById(id).innerHTML = text;
+}
+
+
+function addsnippet(id,text){
+	newSnippet ="<p>" +text+ "</p>";
+	document.getElementById(id).innerHTML += newSnippet;
+	scrolltobottom(id);
+}
+
+function scrolltobottom(id){
+ 	var objDiv = document.getElementById(id);
+	var height = objDiv.scrollHeight;
+ 	objDiv.scrollTop = height;
+}
+
+
+function useraddsnippet(id,bucket){
+	var button = document.getElementById('submitbutton');
+	var chattext = document.getElementById('usertext');
+	var oldtext = document.getElementById('chatty');
+
+	button.onclick = function () {
+		newSnippet ="<p>" +chattext.value + "</p>";
+		newSaveText = oldtext.value + "Time: " + bucket + ", Text: " + chattext.value + "; ";
+		document.getElementById(id).innerHTML += newSnippet;
+		scrolltobottom(id);
+		document.getElementById('usertext').value='';
+		document.getElementById('chatty').value = newSaveText;
+		return false;
+	};
+}
+
+function makeiframe(){
+   var link = "https://www.youtube.com/embed/b-_IUmP2mbQ?rel=0&autoplay=1&mute=0&controls=0&disablekb=1&modestbranding=1&showinfo=0&autohide=1"
+var iframe = document.createElement('iframe');
+var target = document.getElementById("video");
+iframe.frameBorder=0;
+iframe.width="800px";
+iframe.height="650px";
+iframe.allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
+iframe.id="randomid";
+iframe.setAttribute("src", link);
+target.appendChild(iframe);
+}
+
+/* Initialize */
+function doInit () {
+	var avail = 1;
+	var speed = 1;
+	var currentTime = 5000;
+	
+	makeiframe();
+setTimeout('useraddsnippet("chat","0")',0); setTimeout('addsnippet("chat","im excited to watch this game")',currentTime+= speed*11500);
+setTimeout('useraddsnippet("chat","11500")',currentTime); setTimeout('addsnippet("chat","close game")',currentTime+= speed*7000);
+setTimeout('useraddsnippet("chat","18500")',currentTime); setTimeout('addsnippet("chat","Impressive shot")',currentTime+= speed*3000);
+setTimeout('useraddsnippet("chat","21500")',currentTime); setTimeout('addsnippet("chat","this dude has a bad hairline jim delaney delany")',currentTime+= speed*11000);
+setTimeout('useraddsnippet("chat","32500")',currentTime); setTimeout('addsnippet("chat","i mean there is time, Michigan can come back")',currentTime+= speed*6000);
+setTimeout('useraddsnippet("chat","38500")',currentTime); setTimeout('addsnippet("chat","hardaway jr was a beast in college")',currentTime+= speed*9000);
+setTimeout('useraddsnippet("chat","47500")',currentTime); setTimeout('addsnippet("chat","the defense played well according to the statline")',currentTime+= speed*30000);
+setTimeout('useraddsnippet("chat","77500")',currentTime); setTimeout('addsnippet("chat","5 minutes no pts")',currentTime+= speed*2000);
+setTimeout('useraddsnippet("chat","79500")',currentTime); setTimeout('addsnippet("chat","scoreless for 5 min")',currentTime+= speed*3000);
+setTimeout('useraddsnippet("chat","82500")',currentTime); setTimeout('addsnippet("chat","thats good D")',currentTime+= speed*1000);
+setTimeout('useraddsnippet("chat","83500")',currentTime); setTimeout('addsnippet("chat","Illonis needs to make moves after this timeout to fix that Illinois*")',currentTime+= speed*11300);
+setTimeout('useraddsnippet("chat","94800")',currentTime); setTimeout('addsnippet("chat","But where is the student section?? If they even have one ...")',currentTime+= speed*28900);
+setTimeout('useraddsnippet("chat","123700")',currentTime); setTimeout('addsnippet("chat","nice selling that foul")',currentTime+= speed*14800);
+setTimeout('useraddsnippet("chat","138500")',currentTime); setTimeout('addsnippet("chat","illini are protecting the paint well")',currentTime+= speed*2000);
+setTimeout('useraddsnippet("chat","140500")',currentTime); setTimeout('addsnippet("chat","it isnt really a contact game kinda why I am not the largest basketball fan")',currentTime+= speed*2300);
+setTimeout('useraddsnippet("chat","142800")',currentTime); setTimeout('addsnippet("chat","Illinois pplays very aggressive on-ball defense, very little help off ball")',currentTime+= speed*25000);
+setTimeout('useraddsnippet("chat","167800")',currentTime); setTimeout('addsnippet("chat","not enough off ball screens by Michigan against such a man heavy defense, offesne looking pretty stagnant")',currentTime+= speed*2050);
+setTimeout('useraddsnippet("chat","169850")',currentTime); setTimeout('addsnippet("chat","good man defense right here")',currentTime+= speed*4650);
+setTimeout('useraddsnippet("chat","174500")',currentTime); setTimeout('addsnippet("chat","good foul")',currentTime+= speed*2000);
+setTimeout('useraddsnippet("chat","176500")',currentTime); setTimeout('addsnippet("chat","im gonna be in maize rage")',currentTime+= speed*26000);
+setTimeout('useraddsnippet("chat","202500")',currentTime); setTimeout('addsnippet("chat","we got this dub")',currentTime+= speed*14000);
+setTimeout('useraddsnippet("chat","216500")',currentTime); setTimeout('addsnippet("chat","Illinois seems to move around on offense a lot better than Michigan")',currentTime+= speed*16100);
+setTimeout('useraddsnippet("chat","232600")',currentTime); setTimeout('addsnippet("chat","Illinois has some good ball movement, but Michigan has to watch out")',currentTime+= speed*5100);
+setTimeout('useraddsnippet("chat","237700")',currentTime); setTimeout('addsnippet("chat","That was good D")',currentTime+= speed*9800);
+setTimeout('useraddsnippet("chat","247500")',currentTime); setTimeout('addsnippet("chat","Very good D")',currentTime+= speed*1000);
+setTimeout('useraddsnippet("chat","248500")',currentTime); setTimeout('addsnippet("chat","LETS GOO")',currentTime+= speed*1000);
+setTimeout('useraddsnippet("chat","249500")',currentTime); setTimeout('addsnippet("chat","niiiice")',currentTime+= speed*4950);
+setTimeout('useraddsnippet("chat","254450")',currentTime); setTimeout('addsnippet("chat","Hardaway lives for the three")',currentTime+= speed*120);
+setTimeout('useraddsnippet("chat","254570")',currentTime); setTimeout('addsnippet("chat","lets go")',currentTime+= speed*880);
+setTimeout('useraddsnippet("chat","255450")',currentTime); setTimeout('addsnippet("chat","CASHHH")',currentTime+= speed*50);
+setTimeout('useraddsnippet("chat","255500")',currentTime); setTimeout('addsnippet("chat","Nice shot")',currentTime+= speed*100);
+setTimeout('useraddsnippet("chat","255600")',currentTime); setTimeout('addsnippet("chat",":&rpar; unreal shot")',currentTime+= speed*50);
+setTimeout('useraddsnippet("chat","255650")',currentTime); setTimeout('addsnippet("chat","bad shot selection but beautfil shot pure momentum decision and basket I just don\'t think they have the same ypes of playmakers")',currentTime+= speed*1150);
+setTimeout('useraddsnippet("chat","256800")',currentTime); setTimeout('addsnippet("chat","i remember this team never penetrated into the paint always relied on the 3 ball")',currentTime+= speed*2900);
+setTimeout('useraddsnippet("chat","259700")',currentTime); setTimeout('addsnippet("chat","kinda funny how the last three minutes of a game takes seven hours")',currentTime+= speed*13000);
+setTimeout('useraddsnippet("chat","272700")',currentTime); setTimeout('addsnippet("chat","it takes a long time towards the end becasue the team behind always wants to stop the clock")',currentTime+= speed*62000);
+setTimeout('useraddsnippet("chat","334700")',currentTime); setTimeout('addsnippet("chat","Michigan has to save those timeouts and run the clock down")',currentTime+= speed*3900);
+setTimeout('useraddsnippet("chat","338600")',currentTime); setTimeout('addsnippet("chat","We\'re still up by 1\'")',currentTime+= speed*25900);
+setTimeout('useraddsnippet("chat","364500")',currentTime); setTimeout('addsnippet("chat","They are gonna start throwing fouls left and right here")',currentTime+= speed*2000);
+setTimeout('useraddsnippet("chat","366500")',currentTime); setTimeout('addsnippet("chat","Hardaway trying to control the game")',currentTime+= speed*6000);
+setTimeout('useraddsnippet("chat","372500")',currentTime); setTimeout('addsnippet("chat","He *He\'s probably the best player")',currentTime+= speed*1000);
+setTimeout('useraddsnippet("chat","373500")',currentTime); setTimeout('addsnippet("chat","I am never a fan of end of game isolation.")',currentTime+= speed*1000);
+setTimeout('useraddsnippet("chat","374500")',currentTime); setTimeout('addsnippet("chat","So they just give him the ball")',currentTime+= speed*1000);
+setTimeout('useraddsnippet("chat","375500")',currentTime); setTimeout('addsnippet("chat","one point game no point in running clock down good drive")',currentTime+= speed*2000);
+setTimeout('useraddsnippet("chat","377500")',currentTime); setTimeout('addsnippet("chat","they shouldn\'t run the clock down anymore.")',currentTime+= speed*100);
+setTimeout('useraddsnippet("chat","377600")',currentTime); setTimeout('addsnippet("chat","Too close")',currentTime+= speed*1850);
+setTimeout('useraddsnippet("chat","379450")',currentTime); setTimeout('addsnippet("chat","ball movement, back screens, etc. can get the team a better shot")',currentTime+= speed*1250);
+setTimeout('useraddsnippet("chat","380700")',currentTime); setTimeout('addsnippet("chat","that was very bad offense by Hardaway once again, neglected the screen and tried to go pure iso")',currentTime+= speed*1150);
+setTimeout('useraddsnippet("chat","381850")',currentTime); setTimeout('addsnippet("chat","eh Little bit of body")',currentTime+= speed*12650);
+setTimeout('useraddsnippet("chat","394500")',currentTime); setTimeout('addsnippet("chat","Appears to be a clear foul to me at least")',currentTime+= speed*100);
+setTimeout('useraddsnippet("chat","394600")',currentTime); setTimeout('addsnippet("chat","damn nice block")',currentTime+= speed*900);
+setTimeout('useraddsnippet("chat","395500")',currentTime); setTimeout('addsnippet("chat","That was a soft foul")',currentTime+= speed*1000);
+setTimeout('useraddsnippet("chat","396500")',currentTime); setTimeout('addsnippet("chat","Felt like that was a soft foul")',currentTime+= speed*1000);
+setTimeout('useraddsnippet("chat","397500")',currentTime); setTimeout('addsnippet("chat","oh wait he fouled out")',currentTime+= speed*4000);
+setTimeout('useraddsnippet("chat","401500")',currentTime); setTimeout('addsnippet("chat","Not worth getting fouled out for")',currentTime+= speed*1000);
+setTimeout('useraddsnippet("chat","402500")',currentTime); setTimeout('addsnippet("chat","Nice shots")',currentTime+= speed*47000);
+setTimeout('useraddsnippet("chat","449500")',currentTime); setTimeout('addsnippet("chat","gotta keep up the defense and shoot more")',currentTime+= speed*1000);
+setTimeout('useraddsnippet("chat","450500")',currentTime); setTimeout('addsnippet("chat","Clutch.")',currentTime+= speed*12900);
+setTimeout('useraddsnippet("chat","463400")',currentTime); setTimeout('addsnippet("chat","what a champ")',currentTime+= speed*1100);
+setTimeout('useraddsnippet("chat","464500")',currentTime); setTimeout('addsnippet("chat","Illinois playing desperate")',currentTime+= speed*6000);
+setTimeout('useraddsnippet("chat","470500")',currentTime); setTimeout('addsnippet("chat","number 32. he is very aggressive in favoring his right hand")',currentTime+= speed*5300);
+setTimeout('useraddsnippet("chat","475800")',currentTime); setTimeout('addsnippet("chat","always moves back right")',currentTime+= speed*100);
+setTimeout('useraddsnippet("chat","475900")',currentTime); setTimeout('addsnippet("chat","Good defense with switching on ball handlers")',currentTime+= speed*1600);
+setTimeout('useraddsnippet("chat","477500")',currentTime); setTimeout('addsnippet("chat","That was a good pass")',currentTime+= speed*1000);
+setTimeout('useraddsnippet("chat","478500")',currentTime); setTimeout('addsnippet("chat","good pass out of penetration")',currentTime+= speed*1000);
+setTimeout('useraddsnippet("chat","479500")',currentTime); setTimeout('addsnippet("chat","terrible shot, but everything leading up it looked good.")',currentTime+= speed*2200);
+setTimeout('useraddsnippet("chat","481700")',currentTime); setTimeout('addsnippet("chat","well be fine if we keep getting to the line wow")',currentTime+= speed*900);
+setTimeout('useraddsnippet("chat","482600")',currentTime); setTimeout('addsnippet("chat","good d illini are fouling left and right")',currentTime+= speed*1900);
+setTimeout('useraddsnippet("chat","484500")',currentTime); setTimeout('addsnippet("chat","Illinois is banking on us missing so they can go hit a three or just something i suppose")',currentTime+= speed*1200);
+setTimeout('useraddsnippet("chat","485700")',currentTime); setTimeout('addsnippet("chat","Great tie selection by both coaches")',currentTime+= speed*13800);
+setTimeout('useraddsnippet("chat","499500")',currentTime); setTimeout('addsnippet("chat","They are gonna go for the 3 to tie it up, but I think Michigan will play good D and stop Illinois")',currentTime+= speed*25300);
+setTimeout('useraddsnippet("chat","524800")',currentTime); setTimeout('addsnippet("chat","solid defense")',currentTime+= speed*5700);
+setTimeout('useraddsnippet("chat","530500")',currentTime); setTimeout('addsnippet("chat","I hate how they always call so many time outs at the end")',currentTime+= speed*6000);
+setTimeout('useraddsnippet("chat","536500")',currentTime); setTimeout('addsnippet("chat","dang")',currentTime+= speed*900);
+setTimeout('useraddsnippet("chat","537400")',currentTime); setTimeout('addsnippet("chat","bad for viewers")',currentTime+= speed*3100);
+setTimeout('useraddsnippet("chat","540500")',currentTime); setTimeout('addsnippet("chat","that evan turner shot was insane")',currentTime+= speed*22000);
+setTimeout('useraddsnippet("chat","562500")',currentTime); setTimeout('addsnippet("chat","Evan Turner, the dagger")',currentTime+= speed*1000);
+setTimeout('useraddsnippet("chat","563500")',currentTime); setTimeout('addsnippet("chat","i hate ohio state")',currentTime+= speed*2000);
+setTimeout('useraddsnippet("chat","565500")',currentTime); setTimeout('addsnippet("chat","i hate osu")',currentTime+= speed*950);
+setTimeout('useraddsnippet("chat","566450")',currentTime); setTimeout('addsnippet("chat","it\'s so annoying")',currentTime+= speed*12050);
+setTimeout('useraddsnippet("chat","578500")',currentTime); setTimeout('addsnippet("chat","elongates the game so much")',currentTime+= speed*4000);
+setTimeout('useraddsnippet("chat","582500")',currentTime); setTimeout('addsnippet("chat","from a viewer perspective, the timeouts stretch the game soo much")',currentTime+= speed*10300);
+setTimeout('useraddsnippet("chat","592800")',currentTime); setTimeout('addsnippet("chat","wouldnt be surprised if they went for a quick 2")',currentTime+= speed*5800);
+setTimeout('useraddsnippet("chat","598600")',currentTime); setTimeout('addsnippet("chat","theyre going for 3")',currentTime+= speed*5900);
+setTimeout('useraddsnippet("chat","604500")',currentTime); setTimeout('addsnippet("chat","leave 12 seconds on the clock")',currentTime+= speed*2000);
+setTimeout('useraddsnippet("chat","606500")',currentTime); setTimeout('addsnippet("chat","Wow, gotta put that in")',currentTime+= speed*1000);
+setTimeout('useraddsnippet("chat","607500")',currentTime); setTimeout('addsnippet("chat","oh they did go for the 2!")',currentTime+= speed*100);
+setTimeout('useraddsnippet("chat","607600")',currentTime); setTimeout('addsnippet("chat","he blew it!")',currentTime+= speed*1900);
+setTimeout('useraddsnippet("chat","609500")',currentTime); setTimeout('addsnippet("chat","Ouch how do they mess that up")',currentTime+= speed*200);
+setTimeout('useraddsnippet("chat","609700")',currentTime); setTimeout('addsnippet("chat","good for us though")',currentTime+= speed*800);
+setTimeout('useraddsnippet("chat","610500")',currentTime); setTimeout('addsnippet("chat","bad defense but lucky miss")',currentTime+= speed*200);
+setTimeout('useraddsnippet("chat","610700")',currentTime); setTimeout('addsnippet("chat","Brandon Paul on the spurs now though,")',currentTime+= speed*800);
+setTimeout('useraddsnippet("chat","611500")',currentTime); setTimeout('addsnippet("chat","he choked hard big L")',currentTime+= speed*1000);
+setTimeout('useraddsnippet("chat","612500")',currentTime); setTimeout('addsnippet("chat","They\'ve killed themselves")',currentTime+= speed*1000);
+setTimeout('useraddsnippet("chat","613500")',currentTime); setTimeout('addsnippet("chat","some horrible basketball by illinois")',currentTime+= speed*1000);
+setTimeout('useraddsnippet("chat","614500")',currentTime); setTimeout('addsnippet("chat","I\'m a fan of that drive. If the D gives the layup, go for it and hope that Michigan misses a free throw")',currentTime+= speed*2350);
+setTimeout('useraddsnippet("chat","616850")',currentTime); setTimeout('addsnippet("chat","i\'m a three point fan")',currentTime+= speed*3650);
+setTimeout('useraddsnippet("chat","620500")',currentTime); setTimeout('addsnippet("chat","8/9 seconds is enough to get it back and organize a play for a last second 2 or 3 poitner")',currentTime+= speed*3200);
+setTimeout('useraddsnippet("chat","623700")',currentTime); setTimeout('addsnippet("chat","Just gotta make 1 to be safe")',currentTime+= speed*8800);
+setTimeout('useraddsnippet("chat","632500")',currentTime); setTimeout('addsnippet("chat","free throws are becoming a detriment to this game")',currentTime+= speed*4100);
+setTimeout('useraddsnippet("chat","636600")',currentTime); setTimeout('addsnippet("chat","becoming very slow")',currentTime+= speed*1900);
+setTimeout('useraddsnippet("chat","638500")',currentTime); setTimeout('addsnippet("chat","they roll deep")',currentTime+= speed*150);
+setTimeout('useraddsnippet("chat","638650")',currentTime); setTimeout('addsnippet("chat","hes going to brick this FT")',currentTime+= speed*850);
+setTimeout('useraddsnippet("chat","639500")',currentTime); setTimeout('addsnippet("chat","Well done!")',currentTime+= speed*8000);
+setTimeout('useraddsnippet("chat","647500")',currentTime); setTimeout('addsnippet("chat","lest go")',currentTime+= speed*1000);
+setTimeout('useraddsnippet("chat","648500")',currentTime); setTimeout('addsnippet("chat","Michigan\'s fan section is pathetic hahah")',currentTime+= speed*2000);
+setTimeout('useraddsnippet("chat","650500")',currentTime); setTimeout('addsnippet("chat","U of M faithful always showing up")',currentTime+= speed*3000);
+setTimeout('useraddsnippet("chat","653500")',currentTime); setTimeout('addsnippet("chat","osu and msu are always annoying")',currentTime+= speed*16000);
+setTimeout('useraddsnippet("chat","669500")',currentTime); setTimeout('addsnippet("chat","cash")',currentTime+= speed*55000);
+setTimeout('useraddsnippet("chat","724500")',currentTime); setTimeout('addsnippet("chat","Lets goo")',currentTime+= speed*100);
+setTimeout('useraddsnippet("chat","724600")',currentTime); setTimeout('addsnippet("chat","\"the leaders and the best\"")',currentTime+= speed*900);
+setTimeout('useraddsnippet("chat","725500")',currentTime); setTimeout('addsnippet("chat","illini choked")',currentTime+= speed*7000);
+setTimeout('useraddsnippet("chat","732500")',currentTime); setTimeout('addsnippet("chat","played themselves into an L")',currentTime+= speed*1000);
+setTimeout('useraddsnippet("chat","733500")',currentTime); setTimeout('addsnippet("chat","that was just bad late game play from illinois")',currentTime+= speed*1000);
+setTimeout('useraddsnippet("chat","734500")',currentTime); setTimeout('addsnippet("chat","there we go")',currentTime+= speed*1000);
+setTimeout('useraddsnippet("chat","735500")',currentTime); setTimeout('addsnippet("chat","lets go get hype")',currentTime+= speed*1000);
+setTimeout('useraddsnippet("chat","736500")',currentTime); setTimeout('addsnippet("chat","W!!!")',currentTime+= speed*0);
+setTimeout('useraddsnippet("chat","736500")',currentTime); setTimeout('addsnippet("chat","Very strong effort in these last three minutes")',currentTime+= speed*2000);
+setTimeout('useraddsnippet("chat","738500")',currentTime); setTimeout('addsnippet("chat","too many turnovers and missed shots")',currentTime+= speed*1000);
+setTimeout('useraddsnippet("chat","739500")',currentTime); setTimeout('addsnippet("chat","Ayyy good game")',currentTime+= speed*1000);
+setTimeout('useraddsnippet("chat","740500")',currentTime); setTimeout('addsnippet("chat","John is a great coach!")',currentTime+= speed*2000);
+setTimeout('useraddsnippet("chat","742500")',currentTime); setTimeout('addsnippet("chat","i hope we beat ohio state")',currentTime+= speed*13000);
+setTimeout('useraddsnippet("chat","755500")',currentTime); setTimeout('addsnippet("chat","<Strong>THIS TASK HAS ENDED. PLEASE ENTER THE PASSWORD <span style = color:blue>goblue </span> TO THE RIGHT</strong>")',currentTime+= speed*13000);
+setTimeout('useraddsnippet("chat","end")',currentTime); 
+
+
+}
+</script>
+
+</head>
+<body onload='doInit();'>
+
+	<div id='content'>
+		<div id='video'></div>
+		<div id='chathalf'> 		
+			<div id='chat'> </div>
+			<form method="post" onkeypress="return event.keyCode != 13;">
+			<div style="display:none">
+				<input id="usertext" type="text" value="Enter text here" onkeydown="if (event.keyCode == 13) document.getElementById('submitbutton').click()" autocomplete="off">
+				<input id="dummy" type="text" >
+			</div>
+			<div id="submitchat" style="display:none">
+				<button id="submitbutton">Send</button>
+			</div></form>
+
+		</div>
+
+	</div>
+
+<div id = "finalsubmit" ><P>Enter code here:
+<form name="form1" method="post" onSubmit="return validate ( );">
+<P>
+<input type="text" name="password"><BR>
+<input type="text" id="chatty" name ="savedchat">
+<!--please please remember to add "savedchat" to the medialab responses.xls file and also as a custom item in the questionnaire with name "savedchat" and no file name and no wording.-->
+<BR>
+<input type="submit" value="Connect"></p></form>
+</div>
+
+</body>
+</html>
+
